@@ -1,6 +1,6 @@
 <h2>Edit your recipe</h2>
 
-<%= form_tag("/recipes#{@recipe.id}", method: "patch") do %>
+<%= form_tag("/recipes/#{@recipe.id}", method: "patch") do %>
   <div>
     <%= label_tag(:title) %>
     <%= text_field_tag(:title, @recipe.title) %>
