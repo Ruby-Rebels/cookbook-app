@@ -1,8 +1,8 @@
 <h3><%= @recipe.title %></h3>
 <h4>By the esteemed: <%= @recipe.chef %></h4>
-<h5><%= @recipe.ingredients %></h5>
-<h5><%= @recipe.directions %></h5>
-<h5><%= @recipe.prep_time %></h5>
+<h5>Ingredients: <%= @recipe.ingredients %></h5>
+<h5>Directions: <%= @recipe.directions %></h5>
+<h5>Prep time: <%= @recipe.prep_time %></h5>
 
 <p><%= link_to "Edit your recipe", "/recipes/#{@recipe.id}/edit" %></p>
 <p><a href="/recipes">Back to all Recipes</a></p>

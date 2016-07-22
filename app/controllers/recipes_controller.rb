@@ -14,7 +14,8 @@ class RecipesController < ApplicationController
       chef: params[:chef],
       ingredients: params[:ingredients],
       directions: params[:directions],
-      prep_time: params[:prep_time]
+      prep_time: params[:prep_time],
+      image: params[:image]
     )
     @recipe.save
     render "create.html.erb"
@@ -37,7 +38,8 @@ class RecipesController < ApplicationController
       chef: params[:chef],
       ingredients: params[:ingredients],
       directions: params[:directions],
-      prep_time: params[:prep_time]
+      prep_time: params[:prep_time],
+      image: params[:image]
     )
     render "update.html.erb"
   end
