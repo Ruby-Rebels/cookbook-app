@@ -1,6 +1,6 @@
 <h1>Here are all your recipes!</h1>
 
 <% @recipes.each do |recipe| %>
-  <h4>Title: <%= recipe.title %></h4>
+  <h4>Title: <%= link_to recipe.title, "/recipes/#{recipe.id}" %></h4>
   <h5>Chef: <%= recipe.chef %></h5>
 <% end %>
