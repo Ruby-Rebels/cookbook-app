@@ -1,25 +1,39 @@
-<h2>Edit your recipe</h2>
+<h2 class="col-sm-offset-2">Edit your recipe</h2>
 
-<%= form_tag("/recipes/#{@recipe.id}", method: "patch") do %>
-  <div>
-    <%= label_tag(:title) %>
-    <%= text_field_tag(:title, @recipe.title) %>
+<%= form_tag("/recipes/#{@recipe.id}", method: "patch", class: 'form-horizontal') do %>
+  <div class="form-group">
+    <%= label_tag(:title, nil, class: 'control-label col-sm-2') %>
+    <div class="col-sm-6">
+      <%= text_field_tag(:title, @recipe.title, class: "form-control") %>
+    </div>
   </div>
-  <div>
-    <%= label_tag(:chef) %>
-    <%= text_field_tag(:chef, @recipe.chef) %>
+  <div class="form-group">
+    <%= label_tag(:chef, nil, class: 'control-label col-sm-2') %>
+    <div class="col-sm-6">
+    <%= text_field_tag(:chef, @recipe.chef, class: "form-control") %>
+    </div>
   </div>
-  <div>
-    <%= label_tag(:ingredients) %>
-    <%= text_field_tag(:ingredients, @recipe.ingredients) %>
+  <div class="form-group">
+    <%= label_tag(:ingredients, nil, class: 'control-label col-sm-2') %>
+    <div class="col-sm-6">
+    <%= text_field_tag(:ingredients, @recipe.ingredients, class: "form-control") %>
+    </div>
   </div>
-  <div>
-    <%= label_tag(:directions) %>
-    <%= text_field_tag(:directions, @recipe.directions) %>
+  <div class="form-group">
+    <%= label_tag(:directions, nil, class: 'control-label col-sm-2') %>
+    <div class="col-sm-6">
+    <%= text_field_tag(:directions, @recipe.directions, class: "form-control") %>
+    </div>
   </div>
-  <div>
-    <%= label_tag(:prep_time) %>
-    <%= text_field_tag(:prep_time, @recipe.prep_time) %>
+  <div class="form-group">
+    <%= label_tag(:prep_time, nil, class: 'control-label col-sm-2') %>
+    <div class="col-sm-6">
+    <%= text_field_tag(:prep_time, @recipe.prep_time, class: "form-control") %>
+    </div>
   </div>
-  <%= submit_tag("Edit your recipe") %>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= submit_tag("Update your recipe", class: 'btn btn-default') %>
+    </div>
+  </div>
 <% end %>

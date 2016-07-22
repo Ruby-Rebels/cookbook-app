@@ -1,25 +1,41 @@
-<h1>Create a Recipe!</h1>
+<h1 class="col-sm-offset-2">Create a Recipe!</h1>
 
-<%= form_tag("/recipes", method: "post") do %>
-  <div>
-    <%= label_tag(:title) %>
-    <%= text_field_tag(:title) %>
+<%= form_tag("/recipes", method: "post", class: 'form-horizontal') do %>
+  <div class="form-group">
+    <%= label_tag(:title, nil, class: 'control-label col-sm-2') %>
+    <div class="col-sm-6">
+      <%= text_field_tag(:title, nil, class: "form-control") %>
+    </div>
   </div>
-  <div>
-    <%= label_tag(:chef) %>
-    <%= text_field_tag(:chef) %>
+  <div class="form-group">
+    <%= label_tag(:chef, nil, class: 'control-label col-sm-2') %>
+    <div class="col-sm-6">
+    <%= text_field_tag(:chef, nil, class: "form-control") %>
+    </div>
   </div>
-  <div>
-    <%= label_tag(:ingredients) %>
-    <%= text_field_tag(:ingredients) %>
+  <div class="form-group">
+    <%= label_tag(:ingredients, nil, class: 'control-label col-sm-2') %>
+    <div class="col-sm-6">
+    <%= text_field_tag(:ingredients, nil, class: "form-control") %>
+    </div>
   </div>
-  <div>
-    <%= label_tag(:directions) %>
-    <%= text_field_tag(:directions) %>
+  <div class="form-group">
+    <%= label_tag(:directions, nil, class: 'control-label col-sm-2') %>
+    <div class="col-sm-6">
+    <%= text_field_tag(:directions, nil, class: "form-control") %>
+    </div>
   </div>
-  <div>
-    <%= label_tag(:prep_time) %>
-    <%= text_field_tag(:prep_time) %>
+  <div class="form-group">
+    <%= label_tag(:prep_time, nil, class: 'control-label col-sm-2') %>
+    <div class="col-sm-6">
+    <%= text_field_tag(:prep_time, nil, class: "form-control") %>
+    </div>
   </div>
-  <%= submit_tag("Create your recipe") %>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= submit_tag("Create your recipe", class: 'btn btn-default') %>
+    </div>
+  </div>
 <% end %>
+
+<p class="col-sm-offset-2"><%= link_to "Back to all recipes", "/recipes" %></div>
