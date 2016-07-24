@@ -6,3 +6,4 @@
 
 <p><%= link_to "Edit your recipe", "/recipes/#{@recipe.id}/edit" %></p>
 <p><a href="/recipes">Back to all Recipes</a></p>
+<p><%= link_to "Delete", "/recipes/#{@recipe.id}", method: :delete%></p>

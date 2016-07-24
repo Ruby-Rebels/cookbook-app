@@ -18,7 +18,8 @@ class RecipesController < ApplicationController
       image: params[:image]
     )
     @recipe.save
-    render "create.html.erb"
+    flash[:success] = "#{@recipe.title} was created!"
+    redirect_to "/recipes/#{@recipe.id}"
   end
 
   def show
@@ -41,6 +42,14 @@ class RecipesController < ApplicationController
       prep_time: params[:prep_time],
       image: params[:image]
     )
-    render "update.html.erb"
+    flash[:success] = "#{@recipe.title} was successfully updated"
+    redirect_to "/recipes/#{@recipe.id}"
+  end
+
+  def destroy
+    @recipe = Recipe.find_by(id: params[:id])
+    @recipe.destroy
+    flash[:success] = "#{@recipe.title} was destroyed!"
+    redirect_to "/recipes"
   end
 end

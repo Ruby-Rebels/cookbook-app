@@ -1,7 +1,14 @@
 <h1>Here are all your recipes!</h1>
 <h4><%= link_to "Create a new recipe", "/recipes/new" %></h4>
 
-<% @recipes.each do |recipe| %>
-  <h4>Title: <%= link_to recipe.title, "/recipes/#{recipe.id}" %></h4>
-  <h5>Chef: <%= recipe.chef %></h5>
-<% end %>
+<div class="row recipes-index">
+  <% @recipes.each do |recipe| %>
+    <a href="/recipes/<%= recipe.id %>">
+      <div class="col-md-4 well">
+        <h4>Title: <%= recipe.title %></h4>
+        <h5>Chef: <%= recipe.chef %></h5>
+        <img src="<%= recipe.image %>" alt="">  
+      </div>
+    </a>
+  <% end %>
+</div>
