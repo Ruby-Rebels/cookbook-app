@@ -1,6 +1,9 @@
 class RecipesController < ApplicationController
   def index
     @recipes = Recipe.all
+    if params[:sort]
+      @recipes = Recipe.order(params[:sort])
+    end
     render "index.html.erb"
   end
 
