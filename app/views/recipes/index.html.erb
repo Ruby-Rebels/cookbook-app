@@ -6,7 +6,7 @@
     <a href="/recipes/<%= recipe.id %>">
       <div class="col-md-4 well">
         <h4>Title: <%= recipe.title %></h4>
-        <h5>Chef: <%= recipe.chef %></h5>
+        <h5>Chef: <%= recipe.user.name %></h5>
         <h6>Prep Time: <%= recipe.friendly_prep_time %></h6>
         <p>Created at: <%= recipe.friendly_created_at %></p>
         <img src="<%= recipe.image %>" alt="">
